@@ -2,7 +2,6 @@ package ru.sberbank.basics.primitives;
 
 public class ShowcaseString {
     public static void main(String[] args) {
-
         String stringA = "Да!";
         String stringB = "Да!";
         String stringC = stringA;
@@ -28,11 +27,11 @@ public class ShowcaseString {
         }
 
         if (stringA.equals(stringE)) {
-            System.out.println("stringA.equals(stringE)  = true");
+            System.out.println("stringA.equals(stringE) = true");
         }
 
         if (stringA.equalsIgnoreCase(stringE)) {
-            System.out.println("stringA.equalsIgnoreCase(stringE)  = true");
+            System.out.println("stringA.equalsIgnoreCase(stringE) = true");
         }
 
         //Конкатенация. Объединение строк
@@ -49,18 +48,15 @@ public class ShowcaseString {
         concatStr = "Это какой-то хитрый метод?" + concatStr + " " + concatStr; //+ " Но не стоит на него полагаться!";
 
         // Smelly...
-        // String cycleString = "Start ";
-        // for (int i = 0; i < 10; i++) {
-        //     cycleString += stringA;
-        // }
+        //String cycleString = "Start ";
+        //for (int i = 0; i < 10; i++) {
+        //    cycleString += stringA;
+        //}
 
         StringBuilder stringBuilder = new StringBuilder("Start ");
         for (int i = 0; i < 10; i++) {
             stringBuilder.append(stringA);
         }
-
         System.out.println(stringBuilder.toString());
-
-
     }
 }

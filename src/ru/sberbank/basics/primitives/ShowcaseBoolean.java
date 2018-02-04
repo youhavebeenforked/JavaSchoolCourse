@@ -14,7 +14,7 @@ public class ShowcaseBoolean {
         System.out.println("тернарный оператор " + output);
 
         // Пример "ленивого" И
-        if (a < 3 && b > 5) {
+        if (a == 3 && b > 5) {
             System.out.println("first!");
         }
 

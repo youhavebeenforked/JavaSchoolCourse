@@ -14,7 +14,7 @@ public class ShowcaseNumbers {
         byte a = 0b101;
         byte b = 0x00f;
 
-        int c = a + b / ch; // byte и char приводятся к int
+        int c = a + b + ch; // byte и char приводятся к int
 
         long d = (c + 4_000L) / 100; // int приводится к long
 
