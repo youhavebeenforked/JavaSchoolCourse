@@ -31,16 +31,13 @@ public class ShowcaseConstructions {
         // Условие, ветвление. switch
         Cases chooseMe = Cases.FIRST;
         switch (chooseMe) { // принимает объекты типа Enum, Строки (c 7 java), а также целые числа: сhar, byte, short, integer
-            case FIRST: {
+            case FIRST:
                 System.out.println("Выполнится этот код и перейдем к следующему case-statement");
-            }
-            case SECOND: {
+            case SECOND: 
                 System.out.println("Выполнится этот код. Дальнейшее выполнение кода быдет прервано командой break.");
                 break;
-            }
-            default: {
+            default:
                 System.out.println("Этот блок кода выполнится если не найдено ни одного подходящего условия.");
-            }
         }
 
         // Циклы
