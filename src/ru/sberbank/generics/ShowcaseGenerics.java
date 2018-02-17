@@ -6,6 +6,7 @@ import java.util.List;
 public class ShowcaseGenerics {
     public static void main(String[] args) {
         Pair<Integer, String> pair = new Pair<>(1, "Hello");
+
         Integer first = pair.getFirst();
         System.out.println(first + " " + pair.getSecond());
 

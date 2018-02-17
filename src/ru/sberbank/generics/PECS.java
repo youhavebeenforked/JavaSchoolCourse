@@ -33,15 +33,9 @@ public class PECS {
         RootClass cClass = producer.get(0);
     }
 
-    static class RootClass {
+    static class RootClass { }
 
-    }
+    static class MiddleClass extends RootClass { }
 
-    static class MiddleClass extends RootClass {
-
-    }
-
-    static class ChildClass extends MiddleClass {
-
-    }
+    static class ChildClass extends MiddleClass { }
 }

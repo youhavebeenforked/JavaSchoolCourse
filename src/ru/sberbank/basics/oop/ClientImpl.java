@@ -1,6 +1,6 @@
 package ru.sberbank.basics.oop;
 
-public class ClientImpl implements Client {
+public class ClientImpl implements Client, Person {
     private final String name;
     private final boolean is_male;
     private static final String MALE_VOCATIVE = "Mr.";

@@ -45,7 +45,7 @@ public class ShowcaseString {
         concatStr = "Так эффективнее? ".concat(stringA).concat(" Но код становится менее читабельным.");
         System.out.println(concatStr);
 
-        concatStr = "Это какой-то хитрый метод?" + concatStr + " " + concatStr; //+ " Но не стоит на него полагаться!";
+        concatStr = "Это какой-то хитрый метод?" + concatStr + " " + concatStr; //+ " Но не стоит полагаться на "авось"!";
 
         // Smelly...
         //String cycleString = "Start ";

@@ -1,6 +1,8 @@
 package ru.sberbank.generics;
 
-public class Pair<T, R> {
+import java.io.Serializable;
+
+public class Pair<T, R extends Comparable & Serializable> {
     private T first;
     private R second;
 
