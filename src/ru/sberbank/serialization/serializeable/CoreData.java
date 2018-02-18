@@ -1,4 +1,4 @@
-package ru.sberbank.serialization;
+package ru.sberbank.serialization.serializeable;
 
 public class CoreData {
     private String seed = "default value";

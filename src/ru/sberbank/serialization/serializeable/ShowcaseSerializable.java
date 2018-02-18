@@ -1,4 +1,4 @@
-package ru.sberbank.serialization;
+package ru.sberbank.serialization.serializeable;
 
 import java.io.*;
 

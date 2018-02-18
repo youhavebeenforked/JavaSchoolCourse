@@ -1,4 +1,4 @@
-package ru.sberbank.serialization;
+package ru.sberbank.serialization.externalizeable;
 
 import java.io.Externalizable;
 import java.io.IOException;

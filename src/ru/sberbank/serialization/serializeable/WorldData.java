@@ -1,15 +1,16 @@
-package ru.sberbank.serialization;
+package ru.sberbank.serialization.serializeable;
 
-import java.io.ObjectStreamField;
 import java.io.Serializable;
 
 public class WorldData extends CoreData implements Serializable {
+    // private static final long serialVersionUID = 1L;
+
     private static String maxAge;
 
     private String worldName;
     private int worldAge;
 
-   // private static final ObjectStreamField[] serialPersistentFields = { new ObjectStreamField("worldName", String.class) };
+    // private static final ObjectStreamField[] serialPersistentFields = { new ObjectStreamField("worldName", String.class) };
 
 
     private transient int daysFromLastSave;
