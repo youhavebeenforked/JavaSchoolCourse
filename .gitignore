@@ -23,3 +23,8 @@ hs_err_pid*
 
 .idea/
 *.iml
+*/gradle-wrapper.properties
+.gradle/
+**/gradle/
+**/gradlew
+**/gradlew.bat

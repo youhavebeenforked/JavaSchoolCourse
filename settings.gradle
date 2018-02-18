@@ -1,0 +1,5 @@
+rootProject.name = 'java-course'
+include 'core'
+include 'enterprise'
+include 'enterprise:serialization'
+
