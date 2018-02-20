@@ -19,7 +19,8 @@ public class ComplexEntitySerializer extends Serializer<ComplexEntity> {
 
     @Override
     public ComplexEntity read(Kryo kryo, Input input, Class<ComplexEntity> type) {
-        ComplexEntity ce = new ComplexEntity();
+        ComplexEntity ce = kryo.newInstance(type);
+        kryo.reference(ce);
         ce.setName(new String(input.readBytes(36)));
         int length = input.read();
         ce.setList(new ArrayList<>(length));

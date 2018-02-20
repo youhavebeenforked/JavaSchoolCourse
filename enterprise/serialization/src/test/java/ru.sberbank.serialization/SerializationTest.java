@@ -102,6 +102,9 @@ public class SerializationTest {
         complexEntity.addEntity(entity2);
         complexEntity.addEntity(entity);
         complexEntity.addEntity(entity2);
+        complexEntity.addEntity(new SimpleEntity());
+        complexEntity.addEntity(new SimpleEntity());
+        complexEntity.addEntity(new SimpleEntity());
 
         kryo.register(ComplexEntity.class, new ComplexEntitySerializer());
         kryo.writeClassAndObject(output, complexEntity);
