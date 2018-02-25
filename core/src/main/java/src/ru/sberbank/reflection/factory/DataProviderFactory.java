@@ -1,6 +1,5 @@
 package src.ru.sberbank.reflection.factory;
 
-import java.util.Properties;
 import java.util.PropertyResourceBundle;
 
 public class DataProviderFactory {
@@ -12,7 +11,7 @@ public class DataProviderFactory {
         String className = properties.getString(PROVIDER_CLASSNAME_PROPERTY);
         try {
             Class cl = Class.forName(className);
-            DataProvider provider = (DataProvider)cl.newInstance();
+            DataProvider provider = (DataProvider) cl.newInstance();
             return provider;
         } catch (ClassNotFoundException | InstantiationException | IllegalAccessException ex) {
             ex.printStackTrace();

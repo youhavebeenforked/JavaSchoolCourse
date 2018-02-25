@@ -1,4 +1,4 @@
-package src.ru.sberbank.reflection.overview;
+package src.ru.sberbank.reflection.annotation;
 
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
@@ -16,7 +16,7 @@ public class ShowcaseClassFields {
         Class<?> aClass = obj.getClass();
         Field[] declaredFields = aClass.getDeclaredFields();
         StringBuilder sb = new StringBuilder("{");
-        for(Field field : declaredFields) {
+        for (Field field : declaredFields) {
             if (checkAnnotation(field)) continue;
             boolean reset = false;
             if (!field.isAccessible()) {
@@ -28,14 +28,14 @@ public class ShowcaseClassFields {
                 field.setAccessible(false);
             }
         }
-        sb.deleteCharAt(sb.length()-1).append("}");
+        sb.deleteCharAt(sb.length() - 1).append("}");
         return sb.toString();
     }
 
     private static boolean checkAnnotation(Field field) {
         Annotation[] annotations = field.getDeclaredAnnotations();
         boolean hide = false;
-        for(Annotation annotation : annotations) {
+        for (Annotation annotation : annotations) {
             if (annotation.annotationType().equals(Hide.class)) {
                 hide = true;
                 break;

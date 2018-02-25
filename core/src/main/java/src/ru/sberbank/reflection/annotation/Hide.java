@@ -1,4 +1,4 @@
-package src.ru.sberbank.reflection.overview;
+package src.ru.sberbank.reflection.annotation;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

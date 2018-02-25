@@ -15,7 +15,7 @@ public class ShowcaseProxy {
         userName = in.nextLine();
         try {
             System.out.println(proxy.getImportantData());
-        } catch(RuntimeException ex) {
+        } catch (RuntimeException ex) {
             System.out.println("Error: " + ex.getMessage());
         }
     }
