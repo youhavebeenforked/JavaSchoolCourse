@@ -1,4 +1,4 @@
-package src.ru.sberbank.reflection.overview;
+package src.ru.sberbank.reflection.examples.overview;
 
 import java.lang.reflect.Field;
 

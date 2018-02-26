@@ -1,4 +1,4 @@
-package src.ru.sberbank.reflection.proxy;
+package src.ru.sberbank.reflection.examples.proxy;
 
 public class ServiceImpl implements Service {
     public String getImportantData() {

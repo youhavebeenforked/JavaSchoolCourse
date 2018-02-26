@@ -1,4 +1,4 @@
-package src.ru.sberbank.reflection.overview;
+package src.ru.sberbank.reflection.examples.overview;
 
 public class Person {
     private final String name;

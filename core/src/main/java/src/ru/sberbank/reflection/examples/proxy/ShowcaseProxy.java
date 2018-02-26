@@ -1,4 +1,4 @@
-package src.ru.sberbank.reflection.proxy;
+package src.ru.sberbank.reflection.examples.proxy;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;

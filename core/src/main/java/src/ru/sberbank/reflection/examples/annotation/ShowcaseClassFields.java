@@ -1,4 +1,4 @@
-package src.ru.sberbank.reflection.annotation;
+package src.ru.sberbank.reflection.examples.annotation;
 
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;

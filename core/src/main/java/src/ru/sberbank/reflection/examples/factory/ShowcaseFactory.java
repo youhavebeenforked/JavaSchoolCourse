@@ -1,4 +1,4 @@
-package src.ru.sberbank.reflection.factory;
+package src.ru.sberbank.reflection.examples.factory;
 
 public class ShowcaseFactory {
     public static void main(String[] args) {
