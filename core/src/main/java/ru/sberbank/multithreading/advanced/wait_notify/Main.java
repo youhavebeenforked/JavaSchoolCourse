@@ -26,7 +26,7 @@ public class Main {
             while (true) {
                 addJobToQueue(supplier, rnd.nextInt(3));
                 try {
-                    Thread.sleep(200 + rnd.nextInt(50));
+                    Thread.sleep(20 + rnd.nextInt(50));
                 } catch (InterruptedException e) {
                     System.out.println("supplyFiller was interrupted");
                     break;

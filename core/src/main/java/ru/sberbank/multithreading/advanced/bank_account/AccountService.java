@@ -24,8 +24,8 @@ public class AccountService {
     public boolean withdrawMoney(String accountId, long amount) {
         Account account = dao.getAccount(accountId);
         long newBalance = account.getBalance() - amount;
-        if (newBalance < 0) {
-            return false;
+        if (newBalance < 0) { // Пример ошибки работы с общим ресурсом!
+            return false;     // Эта логика должжны быть под монитором!
         }
         account.withdraw(amount);
         return true;
