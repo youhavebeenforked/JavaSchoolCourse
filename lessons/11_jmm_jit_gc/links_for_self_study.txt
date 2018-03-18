@@ -1,0 +1,4 @@
+отличные лекции по:
+JMM - www.youtube.com/watch?v=XgiXKPEILoc
+JIT - www.youtube.com/watch?v=oH4_unx8eJQ
+GC  - www.youtube.com/watch?v=we_enrM7TSY

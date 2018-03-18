@@ -1,0 +1,2 @@
+презентация Венката по Lambda & Stream API -
+https://www.youtube.com/watch?v=1OpAgZvYXLQ
