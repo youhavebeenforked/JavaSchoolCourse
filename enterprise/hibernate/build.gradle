@@ -1,0 +1,25 @@
+buildscript {
+	repositories {
+		mavenCentral()
+	}
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+
+group = 'ru.sberbank'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 1.8
+
+repositories {
+	mavenCentral()
+}
+
+
+dependencies {
+	compileOnly "org.projectlombok:lombok:+"
+	compile('org.hsqldb:hsqldb:2.4.0')
+	compile('org.hibernate:hibernate-core:5.2.14.Final')
+	compile 'org.hibernate:hibernate-c3p0:5.2.14.Final'
+
+}
