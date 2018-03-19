@@ -12,20 +12,21 @@
         <property name="hibernate.connection.pool_size">3</property>
         <property name="hibernate.current_session_context_class">thread</property>
 
-        <property name="hibernate.hbm2ddl.auto">update</property>
+        <property name="hibernate.hbm2ddl.auto">create</property>
 
         <property name="hibernate.show_sql">true</property>
         <property name="hibernate.format_sql">true</property>
         <property name="hibernate.c3p0.max_size">10</property>
         <property name="hibernate.c3p0.min_size">2</property>
 
-        <mapping class="ru.sberbank.hibernate.task.entities.Region"/>
-        <mapping class="ru.sberbank.hibernate.task.entities.City"/>
-        <mapping class="ru.sberbank.hibernate.task.entities.Author"/>
-        <mapping class="ru.sberbank.hibernate.task.entities.Book"/>
-        <mapping class="ru.sberbank.hibernate.task.entities.BaseQuote"/>
-        <mapping class="ru.sberbank.hibernate.task.entities.BaseQuote$QuoteKey"/>
-        <mapping class="ru.sberbank.hibernate.task.entities.BaseQuote$QuotePrice"/>
+        <mapping class="ru.sberbank.hibernate.entities.Region"/>
+        <mapping class="ru.sberbank.hibernate.entities.City"/>
+        <mapping class="ru.sberbank.hibernate.entities.Author"/>
+        <mapping class="ru.sberbank.hibernate.entities.Book"/>
+        <mapping class="ru.sberbank.hibernate.entities.BaseQuote"/>
+        <mapping class="ru.sberbank.hibernate.entities.BaseQuote$QuoteKey"/>
+        <mapping class="ru.sberbank.hibernate.entities.BaseQuote$QuotePrice"/>
+        <mapping class="ru.sberbank.hibernate.entities.IndexedEntity"/>
 
 
     </session-factory>

@@ -30,6 +30,10 @@ public class s03_JPA_HQL {
         q.setParameter("cityName", "%Tir%");
         List<City> lst = q.getResultList();
         System.out.println(lst);
+
+        lst.get(0).setCityName(lst.get(0).getCityName() + " !!");
+
+        entityManager.getTransaction().commit();
         entityManager.close();
     }
 

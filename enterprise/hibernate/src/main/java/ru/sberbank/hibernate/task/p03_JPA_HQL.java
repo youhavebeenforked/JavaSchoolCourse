@@ -19,8 +19,6 @@ public class p03_JPA_HQL {
         //1. Выбрать записи с использованием HQl
         //2. Выбрать с использованием JOIN FETCH
 
-
-
         entityManager.getTransaction().commit();
         entityManager.close();
     }
