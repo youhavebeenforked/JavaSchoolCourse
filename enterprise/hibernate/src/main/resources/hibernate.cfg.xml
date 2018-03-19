@@ -24,6 +24,7 @@
         <mapping class="ru.sberbank.hibernate.task.entities.Author"/>
         <mapping class="ru.sberbank.hibernate.task.entities.Book"/>
         <mapping class="ru.sberbank.hibernate.task.entities.BaseQuote"/>
+        <mapping class="ru.sberbank.hibernate.task.entities.IndexedEntity"/>
         <mapping class="ru.sberbank.hibernate.task.entities.BaseQuote$QuoteKey"/>
         <mapping class="ru.sberbank.hibernate.task.entities.BaseQuote$QuotePrice"/>
 
