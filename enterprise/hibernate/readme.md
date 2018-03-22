@@ -4,3 +4,4 @@
 - p03_JPA_HQL - Виды запросов на HQL
 - Наследование таблиц @Inheritance
 - @NamedQueries ??
+- @Clob ??
