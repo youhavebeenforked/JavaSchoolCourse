@@ -47,6 +47,9 @@ public class UserService {
     }
 
     private UserDto toDto(UserModel m) {
+        if (m == null) {
+            return null;
+        }
         return new UserDto(m.getUuid(), m.getName(), m.getPictureId(), m.getProfileText());
     }
 

@@ -10,10 +10,7 @@
 
     <title>Users Repository</title>
 
-    <!-- Bootstrap core CSS -->
     <link th:href="@{/vendor/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
     <link th:href="@{/css/3-col-portfolio.css}" rel="stylesheet">
     <link th:href="@{/css/open-iconic-bootstrap.css}" rel="stylesheet">
 
@@ -21,10 +18,9 @@
 
 <body>
 
-<!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
-        <a class="navbar-brand" href="#">Users Repository</a>
+        <a class="navbar-brand" th:href="@{/}">Users Repository</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
                 aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -41,11 +37,9 @@
     </div>
 </nav>
 
-<!-- Page Content -->
 <div class="container">
-    <!-- Page Heading -->
     <h1 class="my-4">Репозиторий пользователей API
-        <small>Список</small>
+        <small>beta</small>
     </h1>
     <form th:action="@{/user}" method="post" class="row" th:object="${userEdit}">
         <input type="hidden" th:field="*{uuid}">
@@ -81,41 +75,50 @@
             </div>
         </div>
         <div class="col-sm-12 form-item">
-            <button type="submit" class="btn btn-primary" th:text="${userEdit.uuid == null ? 'Create User' : 'Save User' }"></button>
+            <button type="submit" class="btn btn-primary"
+                    th:text="${userEdit.uuid == null ? 'Create User' : 'Save User' }"></button>
         </div>
     </form>
     <div class="row">
         <div class="col-lg-4 col-sm-6 portfolio-item" th:each="user: ${users}">
             <div class="card h-100">
-                <a th:href="${'user/' + user.uuid}">
-                    <img class="card-img-top" th:src="@{/img/{id}(id=${user.pictureId+'.jpg'})}" alt=""></a>
+                <a th:href="@{/user/{id}(id=${user.uuid})}">
+                    <img class="card-img-top" th:src="@{/img/{id}(id=${user.pictureId+'.jpg'})}"
+                         alt=""></a>
                 <div class="card-body">
                     <h4 class="card-title">
-                        <a th:href="${'user/' + user.uuid}" th:text="${user.name}">User Name</a>
+                        <a th:href="@{/user/{id}(id=${user.uuid})}" th:text="${user.name}">User Name</a>
                     </h4>
                     <p class="card-text" th:text="${user.profileText}"></p>
                 </div>
             </div>
         </div>
     </div>
-
-    <!-- /.row -->
-
 </div>
-<!-- /.container -->
-
-<!-- Footer -->
 <footer class="py-5 bg-dark">
     <div class="container">
         <p class="m-0 text-center text-white">Copyright &copy; JavaSchool 2018</p>
     </div>
-    <!-- /.container -->
 </footer>
 
-<!-- Bootstrap core JavaScript -->
 <script th:href="@{/vendor/jquery/jquery.min.js}"></script>
 <script th:href="@{/vendor/bootstrap/js/bootstrap.bundle.min.js}"></script>
+<script>
+
+    function callDelete(uuid) {
+        console.log(uuid);
+        $.ajax({
+            url: '/users/user/' + uuid,
+            type: 'DELETE',
+            success: function(result) {
+                // Do something with the result
+                alert("Ok");
+            }
+        });
+
+    }
+
+</script>
 
 </body>
-
 </html>

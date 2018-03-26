@@ -20,6 +20,8 @@ public class City {
     private String cityName;
 
     //todo: map to Region via @ManyToOne and @JoinColumn(with id of COLUMN!)
+    @ManyToOne
+    @JoinColumn(name = "REGION_ID")
     private Region region;
 
     public City() {

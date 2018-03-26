@@ -3,12 +3,12 @@ package ru.sberbank.hibernate.task;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
+import ru.sberbank.hibernate.task.entities.BaseQuote;
 
 import java.time.LocalDateTime;
 
-import ru.sberbank.hibernate.entities.BaseQuote;
-
 public class p00_ComplexKey {
+    static BaseQuote.QuoteKey key = null;
     public static void main(String[] args) {
         write();
         read();
@@ -17,6 +17,12 @@ public class p00_ComplexKey {
     private static void write() {
         try (Session session = getSessionFactory().openSession()) {
             session.beginTransaction();
+            key = new BaseQuote.QuoteKey(LocalDateTime.now());
+            BaseQuote quote = new BaseQuote();
+            quote.setKey(key);
+            quote.setSymbol("USD/EUR");
+            quote.setPrice(new BaseQuote.QuotePrice(100_00L,120_00L));
+            session.save(quote);
 
             session.getTransaction().commit();
         } catch (Exception ex) {
@@ -28,6 +34,8 @@ public class p00_ComplexKey {
         try (Session session = getSessionFactory().openSession()) {
             session.beginTransaction();
 
+
+            System.out.println(session.find(BaseQuote.class, key));
             session.getTransaction().commit();
         } catch (Exception ex) {
             ex.printStackTrace();

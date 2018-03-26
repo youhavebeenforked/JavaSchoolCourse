@@ -22,6 +22,7 @@ public class Region implements Serializable {
     private String regionName;
 
     //todo: optional map to cities with @OneToMany and tell about - Cascade
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "region")
     private List<City> cities;
 
 }

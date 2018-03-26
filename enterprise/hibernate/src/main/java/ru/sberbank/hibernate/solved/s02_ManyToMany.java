@@ -34,7 +34,6 @@ public class s02_ManyToMany {
         System.out.println("saving author");
         hs.saveAuthor(oldBook, s);
 
-        // Если не закрыть - то вылетает ошибка
         s.getTransaction().commit();
         s = hs.getSessionFactory().getCurrentSession();
         s.beginTransaction();
@@ -50,15 +49,10 @@ public class s02_ManyToMany {
         Book newBook = new Book();
         newBook.setBookName(bookName);
 
-        // Вариант добавления новой книги и существуюего автора
         newBook.addAuthor(oldAuthor);
 
-        // Вариант добавления нового автора к новой книге
         Author newAuthor = new Author();
         newAuthor.setAuthorName("New Author 1");
-        // Нет надобности добавлять книгу к автору
-        // Если связь однонаправленная - то не проблема. Иначе будет забавный эффект
-        //newAuthor.addBook(newBook);
 
         newBook.addAuthor(newAuthor);
         s.save(newAuthor);
@@ -70,15 +64,10 @@ public class s02_ManyToMany {
         Author newAuthor = new Author();
         newAuthor.setAuthorName("New Author 2");
 
-        // Вариант добавления новой книги и существуюего автора
         newAuthor.addBook(oldBook);
 
-        // Вариант добавления нового автора к новой книге
         Book newBook = new Book();
         newBook.setBookName("New Book 2");
-        // Нет надобности добавлять автора к книге
-        // Если связь однонаправленная - то не проблема. Иначе будет забавный эффект
-        //newBook.addAuthor(newAuthor);
         newAuthor.addBook(newBook);
         s.save(newBook);
 

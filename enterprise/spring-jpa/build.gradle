@@ -23,11 +23,11 @@ repositories {
 	mavenCentral()
 }
 
-
 dependencies {
 	compile('org.springframework.boot:spring-boot-starter-data-jpa')
 	compile 'org.hibernate:hibernate-c3p0:5.2.14.Final'
 	runtime('org.hsqldb:hsqldb')
 	compileOnly('org.projectlombok:lombok')
+	testCompile('org.projectlombok:lombok')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 }

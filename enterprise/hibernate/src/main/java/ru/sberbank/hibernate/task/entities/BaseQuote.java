@@ -4,24 +4,23 @@ import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
-import javax.persistence.Embeddable;
-import javax.persistence.Embedded;
-import javax.persistence.EmbeddedId;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 
-import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
+@Entity
+@ToString
+@Table(name = "BASE_QUOTE")
 @Getter @Setter @AllArgsConstructor @NoArgsConstructor
 public class BaseQuote implements Serializable {
-    private QuoteKey key;
+    //@Id
+    @EmbeddedId
+    private BaseQuote.QuoteKey key;
     private String symbol;
-    private QuotePrice price;
+    @Embedded
+    private BaseQuote.QuotePrice price;
 
+    @Embeddable
     @Getter @Setter @NoArgsConstructor @EqualsAndHashCode //Важно переопределить equals() hashCode
     public static class QuoteKey implements Serializable {
         private String id;
@@ -33,11 +32,11 @@ public class BaseQuote implements Serializable {
         }
     }
 
+    @Embeddable
     @Getter @Setter @AllArgsConstructor @NoArgsConstructor
     public static class QuotePrice implements Serializable {
         private Long bid;
         private Long offer;
     }
-
 
 }
