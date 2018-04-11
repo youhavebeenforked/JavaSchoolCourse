@@ -1,8 +1,13 @@
 package ru.sberbank.hibernate.task;
 
+import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
+import ru.sberbank.hibernate.task.entities.Author;
+import ru.sberbank.hibernate.task.entities.Book;
+
+import java.util.List;
 
 public class p02_ManyToMany_LazyAndEager {
 
@@ -11,14 +16,18 @@ public class p02_ManyToMany_LazyAndEager {
 
         Session s = hs.getSessionFactory().getCurrentSession();
         s.beginTransaction();
+        Author jackSparrow = new Author("Jack Sparrow");
+        s.save(jackSparrow);
 
-        // Создать 2 книги, добавить к первой 3х авторов, а ко второй - одного старого и одного нового автора
+        hs.createBook("Alphabet for Dummies", jackSparrow, s);
+
+        List<Book> bookList = s.createQuery("from Book").list();
+
+        System.out.println(bookList);
+
         s.getTransaction().commit();
         s = hs.getSessionFactory().getCurrentSession();
         s.beginTransaction();
-
-        // получить все книги по id старого автора.
-        // Попробовать варианты Lazy/Eager
 
         s.getTransaction().commit();
     }
@@ -27,4 +36,18 @@ public class p02_ManyToMany_LazyAndEager {
         return new Configuration().configure().buildSessionFactory();
     }
 
+    private void createBook(String bookName, Author oldAuthor, Session s) throws HibernateException {
+        Book newBook = new Book();
+        newBook.setBookName(bookName);
+
+        newBook.addAuthor(oldAuthor);
+
+        Author newAuthor = new Author();
+        newAuthor.setAuthorName("New Author 1");
+
+        newBook.addAuthor(newAuthor);
+        s.save(newAuthor);
+
+        s.save(newBook);
+    }
 }

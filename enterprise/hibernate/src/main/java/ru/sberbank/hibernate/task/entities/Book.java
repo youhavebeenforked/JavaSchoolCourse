@@ -20,7 +20,8 @@ public class Book implements Serializable {
     private Long bookId;
     @Column(name = "BOOK_NAME")
     private String bookName;
-    //todo: map to authors via @ManyToMany and @JoinTable
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(name = "BOOK_TO_AUTHOR")
     private Set<Author> authorList;
 
     public void addAuthor(Author author) {

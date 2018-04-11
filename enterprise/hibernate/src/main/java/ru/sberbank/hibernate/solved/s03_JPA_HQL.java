@@ -26,9 +26,10 @@ public class s03_JPA_HQL {
         entityManager.getTransaction().commit();
         entityManager.getTransaction().begin();
 
-        Query q = entityManager.createQuery("from City c where c.cityName like :cityName");
+        Query q = entityManager.createQuery("from City c join FETCH c.region where c.cityName like :cityName ");
         q.setParameter("cityName", "%Tir%");
         List<City> lst = q.getResultList();
+
         System.out.println(lst);
 
         lst.get(0).setCityName(lst.get(0).getCityName() + " !!");

@@ -23,6 +23,7 @@ public class Author implements Serializable {
     @Column(name = "AUTHOR_NAME")
     private String authorName;
     //todo: map to books via @ManyToMany and @JoinTable
+    @ManyToMany(mappedBy = "authorList")
     private Set<Book> bookList;
 
     public Author(String authorName) {

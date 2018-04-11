@@ -2,4 +2,7 @@ rootProject.name = 'java-course'
 include 'core'
 include 'enterprise'
 include 'enterprise:serialization'
+include 'enterprise:hibernate'
+include 'enterprise:spring-jpa'
+include 'enterprise:mvc'
 
